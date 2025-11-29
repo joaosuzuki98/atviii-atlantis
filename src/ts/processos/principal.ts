@@ -1,12 +1,14 @@
 import Processo from "../abstracoes/processo"
 import MenuPrincipal from "../menus/menuPricipal"
-import CadastroHospedagem from "./cadastroHospedagem"
-import EdicaoHospedagem from "./edicaoHospedagem"
-import ExcluirHospedagem from "./exclusaoHospedagem"
+import TipoCadastroCliente from "./tipoCadastroCliente"
+import TipoEdicaoCliente from "./tipoEdicaoCliente"
+import TipoExclusaoCliente from "./tipoExcluisaoCliente"
+import TipoListagemClientes from "./tipoListagemClientes"
 import ListagemAcomodacoes from "./listagemAcomodacoes"
 import ListagemHospedagens from "./listagemHospedagens"
-import TipoCadastroCliente from "./tipoCadastroCliente"
-import TipoListagemClientes from "./tipoListagemClientes"
+import EdicaoHospedagem from "./edicaoHospedagem"
+import ExcluirHospedagem from "./exclusaoHospedagem"
+import CadastroHospedagem from "./cadastroHospedagem"
 
 export default class Principal extends Processo {
     constructor() {
@@ -22,8 +24,16 @@ export default class Principal extends Processo {
                 this.processo = new TipoCadastroCliente()
                 this.processo.processar()
                 break
+            case 2:
+                this.processo = new TipoEdicaoCliente()
+                this.processo.processar()
+                break
             case 3:
                 this.processo = new TipoListagemClientes()
+                this.processo.processar()
+                break
+            case 4:
+                this.processo = new TipoExclusaoCliente()
                 this.processo.processar()
                 break
             case 5:

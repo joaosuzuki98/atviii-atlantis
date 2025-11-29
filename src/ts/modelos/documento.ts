@@ -20,5 +20,16 @@ export default class Documento {
     public get DataExpedicao(){
         return this.dataExpedicao
     }
+
+    public set SetNumero(numero: string) {
+        this.numero = numero
+    }
+
+    public set SetTipo(tipo: TipoDocumento) {
+        this.tipo = tipo
+    }
     
+    public set SetDataExpedicao(dataExpedicao: Date) {
+        this.dataExpedicao = dataExpedicao
+    }
 }
