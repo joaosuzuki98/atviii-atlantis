@@ -20,5 +20,13 @@ class Cliente {
     get Dependentes() { return this.dependentes; }
     get Titular() { return this.titular; }
     set Endereco(endereco) { this.endereco = endereco; }
+    setTelefone(telefone) { this.telefones = telefone; }
+    set Titular(titular) { this.titular = titular; }
+    set Nome(nome) { this.nome = nome; }
+    set NomeSocial(nomeSocial) { this.nomeSocial = nomeSocial; }
+    set DataNascimento(dataNascimento) { this.dataNascimento = dataNascimento; }
+    set Dependentes(dependentes) {
+        this.dependentes = dependentes;
+    }
 }
 exports.default = Cliente;

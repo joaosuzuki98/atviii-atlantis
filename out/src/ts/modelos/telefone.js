@@ -5,6 +5,10 @@ class Telefone {
         this.ddd = ddd;
         this.numero = numero;
     }
+    clonar() {
+        let telefone = new Telefone(this.ddd, this.numero);
+        return telefone;
+    }
     get Ddd() { return this.ddd; }
     get Numero() { return this.numero; }
 }

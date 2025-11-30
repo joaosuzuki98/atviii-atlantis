@@ -6,7 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const processo_1 = __importDefault(require("../abstracoes/processo"));
 const armazem_1 = __importDefault(require("../dominio/armazem"));
 const cliente_1 = __importDefault(require("../modelos/cliente"));
-const cadastroDocumentosCliente_1 = __importDefault(require("./cadastroDocumentosCliente"));
+const cadastrarDocumentosCliente_1 = __importDefault(require("./cadastrarDocumentosCliente"));
+const cadastrarTelefoneTitular_1 = __importDefault(require("./cadastrarTelefoneTitular"));
 const cadastroEnderecoTitular_1 = __importDefault(require("./cadastroEnderecoTitular"));
 class CadastroClienteTitular extends processo_1.default {
     processar() {
@@ -17,7 +18,9 @@ class CadastroClienteTitular extends processo_1.default {
         let cliente = new cliente_1.default(nome, nomeSocial, dataNascimento);
         this.processo = new cadastroEnderecoTitular_1.default(cliente);
         this.processo.processar();
-        this.processo = new cadastroDocumentosCliente_1.default(cliente);
+        this.processo = new cadastrarDocumentosCliente_1.default(cliente);
+        this.processo.processar();
+        this.processo = new cadastrarTelefoneTitular_1.default(cliente);
         this.processo.processar();
         let armazem = armazem_1.default.InstanciaUnica;
         armazem.Clientes.push(cliente);

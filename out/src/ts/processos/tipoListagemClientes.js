@@ -5,7 +5,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const processo_1 = __importDefault(require("../abstracoes/processo"));
 const menuTipoListagemClientes_1 = __importDefault(require("../menus/menuTipoListagemClientes"));
+const listagemDependentesPorTitulares_1 = __importDefault(require("./listagemDependentesPorTitulares"));
 const listagemTitulares_1 = __importDefault(require("./listagemTitulares"));
+const listagemTitularPorDependente_1 = __importDefault(require("./listagemTitularPorDependente"));
 class TipoListagemClientes extends processo_1.default {
     constructor() {
         super();
@@ -17,6 +19,14 @@ class TipoListagemClientes extends processo_1.default {
         switch (this.opcao) {
             case 1:
                 this.processo = new listagemTitulares_1.default();
+                this.processo.processar();
+                break;
+            case 2:
+                this.processo = new listagemDependentesPorTitulares_1.default();
+                this.processo.processar();
+                break;
+            case 3:
+                this.processo = new listagemTitularPorDependente_1.default();
                 this.processo.processar();
                 break;
             default:

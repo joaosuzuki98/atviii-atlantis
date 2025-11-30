@@ -15,5 +15,14 @@ class Documento {
     get DataExpedicao() {
         return this.dataExpedicao;
     }
+    set SetNumero(numero) {
+        this.numero = numero;
+    }
+    set SetTipo(tipo) {
+        this.tipo = tipo;
+    }
+    set SetDataExpedicao(dataExpedicao) {
+        this.dataExpedicao = dataExpedicao;
+    }
 }
 exports.default = Documento;
